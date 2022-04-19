@@ -142,16 +142,16 @@ Ce guide documente les conventions idiomatiques dans le code Go que nous suivons
 
 De manière générale, tout le code doit être sans erreur lorsqu'il est exécuté via `golint` et `go vet`. Nous vous recommandons de configurer votre éditeur pour :
 
-- Exécuter `goimports` lors de la sauvegarde des fichiers modifiés
-- Exécuter `golint` et `go vet` pour vérifier les erreurs
+- exécuter `goimports` lors de la sauvegarde des fichiers modifiés
+- exécuter `golint` et `go vet` pour vérifier les erreurs
 
-Vous pourrez trouver des informations sur le support des éditeurs par les outils Go ici: <https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins>
+Vous trouverez des informations sur le support des éditeurs par les outils Go ici: <https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins>
 
 ## Conventions
 
 ### Pointeurs sur les Interfaces
 
-Il n'y a presque jamais besoin d'un pointeur sur une interface. Les interfaces doivent être passées par valeur - la donnée sous-jacente pouvant toujours être un pointeur.
+Il n'y a presque jamais besoin d'un pointeur sur une interface. Les interfaces doivent être passées par valeur — la donnée sous-jacente peut toujours être un pointeur.
 
 Une interface est constituée de deux champs:
 
@@ -231,8 +231,9 @@ func (h LogHandler) ServeHTTP(
 
 ### Receveurs et Interfaces
 
-Les méthodes avec des receveurs de valeurs peuvent être appelées sur des pointeurs ainsi que sur des valeurs.
-Les méthodes avec des receveurs de pointeurs ne peuvent être appelées que sur des pointeurs ou des [valeurs adressables](https://golang.org/ref/spec#Method_values).
+Les méthodes avec des receveurs de valeurs peuvent être appelées via des pointeurs ainsi que via des valeurs.
+
+Les méthodes avec des receveurs de pointeurs ne peuvent être appelées que via des pointeurs ou des [valeurs adressables](https://golang.org/ref/spec#Method_values).
 
 Par example,
 
@@ -385,11 +386,11 @@ Le mutex et ses méthodes sont des détails d'implémentation de `SMap`, cachés
 
 ### Copiez tranches (Slices) et dictionnaires (Maps) aux Frontières
 
-Tranches (`Slices`) et dictionnaires (`Maps`) contiennent des pointeurs vers des données sous-jacentes. Attention donc des scénarios où ils doivent être copiés.
+Tranches (`Slices`) et dictionnaires (`Maps`) contiennent des pointeurs vers des données sous-jacentes. Attention donc aux scénarios où ils doivent être copiés.
 
 #### Réception de Tranches (Slices) et dictionnaires (Maps)
 
-Gardez toujours à l'esprit que les utilisateurs peuvent modifier un dictionnaire (`Map`) ou une Tranche (`Slice`) que vous avez reçue en argument si vous stockez une référence à celui-ci.
+Gardez toujours à l'esprit que les utilisateurs peuvent modifier un dictionnaire (`Map`) ou une tranche (`Slice`) que vous avez reçue en argument si vous stockez une référence à celui-ci.
 
 <table>
 <thead><tr><th>Non Recommandé</th> <th>Recommandé</th></tr></thead>
@@ -3123,9 +3124,9 @@ La règle de base consiste à utiliser des littéraux de dictionnaires lors de l
 
 ### Formatez les chaînes en dehors de Printf
 
-Si vous déclarez des chaînes de formattage pour les fonctions de style `Printf` en dehors d'une chaîne littérale, faites-en des valeurs `const`.
+Si vous déclarez des chaînes de formatage pour les fonctions de style `Printf` en dehors d'une chaîne littérale, faites-en des valeurs `const`.
 
-Cela aide `go vet` à effectuer une analyse statique de la chaîne de formattage.
+Cela aide `go vet` à effectuer une analyse statique de la chaîne de formatage.
 
 <table>
 <thead><tr><th>Non Recommandé</th><th>Recommandé</th></tr></thead>
@@ -3149,7 +3150,7 @@ fmt.Printf(msg, 1, 2)
 
 ### Nommez les fonctions de style Printf
 
-Lorsque vous déclarez une fonction de style `Printf`, assurez-vous que `go vet` peut détecter et vérifiez la chaîne de formattage.
+Lorsque vous déclarez une fonction de style `Printf`, assurez-vous que `go vet` peut détecter et vérifiez la chaîne de formatage.
 
 Cela signifie que vous devez utiliser la fonction prédéfinie de style `Printf`
 noms si possible. `go vet` les vérifiera par défaut. Voir [Famille Printf](https://golang.org/cmd/vet/#hdr-Printf_family)
