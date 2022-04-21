@@ -1962,15 +1962,15 @@ Le code est autorisé à dépasser cette limite.
 ### Soyez Cohérent
 
 Certaines des recommendations décrites dans ce document peuvent être évaluées objectivement;
-d'autres sont contextuels ou subjectifs.
+d'autres sont contextuelles ou subjectives.
 
 Par-dessus tout, **soyez cohérent**.
 
 Un code cohérent est plus facile à maintenir, plus facile à rationaliser, nécessite moins de
 surcoût cognitif, et est plus facile à migrer ou à mettre à jour à mesure que de nouvelles conventions émergent
-ou des classes de bogues sont corrigés.
+ou des classes de bogues sont corrigées.
 
-Inversement, avoir plusieurs styles disparates ou conflictuels au sein d'une même base de code entraîne une surcharge de maintenance, une incertitude et une dissonance cognitive, qui peuvent tous directement contribuer à réduire la vélocité, à accroître les révisions de code pénibles, et les bogues.
+Inversement, avoir plusieurs styles disparates ou conflictuels au sein d'une même base de code entraîne une surcharge de maintenance, une incertitude et une dissonance cognitive, qui peuvent toutes directement contribuer à réduire la vélocité, à accroître les révisions de code pénibles, et les bogues.
 
 Lors de l'application de ces recommendations à une base de code, il est recommandé que les modifications
 soient faites au niveau du package (ou plus) : les appliquer au niveau du sous-package
