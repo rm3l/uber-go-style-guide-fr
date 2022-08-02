@@ -2430,8 +2430,6 @@ var _e error = F()
 
 Préfixez les `var` et `const` de niveau supérieur non exportés avec `_` pour indiquer clairement quand ils sont utilisés qu'ils sont des symboles globaux.
 
-Exception : valeurs d'erreur non exportées, qui doivent être préfixées par `err`.
-
 Justification : les variables et les constantes de niveau supérieur ont une portée de niveau package. Utiliser un nom générique accroît le risque d'utiliser la mauvaise valeur dans un autre fichier.
 
 <table>
