@@ -140,6 +140,8 @@ Ce guide documente les conventions idiomatiques dans le code Go que nous suivons
 2. [Go Common Mistakes](https://github.com/golang/go/wiki/CommonMistakes)
 3. [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments)
 
+Nous visons à ce que les exemples de code soient précis pour les deux versions mineures les plus récentes de Go [versions](https://go.dev/doc/devel/release).
+
 De manière générale, tout le code doit être sans erreur lorsqu'il est exécuté via `golint` et `go vet`. Nous vous recommandons de configurer votre éditeur pour :
 
 - exécuter `goimports` lors de la sauvegarde des fichiers modifiés
