@@ -603,8 +603,7 @@ const (
 </td></tr>
 </tbody></table>
 
-Il y a des cas où l'utilisation de la valeur zéro est logique, par exemple lorsque le
-ce cas est le comportement par défaut souhaitable.
+Il y a des cas où l'utilisation de la valeur zéro est logique, par exemple lorsque le cas est le comportement par défaut souhaitable.
 
 ```go
 type LogOutput int
